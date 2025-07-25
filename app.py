@@ -17,11 +17,12 @@ heart_rate=st.number_input(value=1,step=1,min_value=0,label="enter heart rate")
 body_temp=st.number_input(value=1,step=1,min_value=0,label="enter body temperature")
 
 
-model=joblib.load("linearmodel.pkl")
+
+model=joblib.load("randmodell.pkl")
 
 st.divider()
 
-predict=st.button("press the button for calories prediction")
+predict=st.button("generate")
 
 
 
@@ -40,8 +41,7 @@ if predict:
     x=[gender_selected,age_normalized,height_normalized,weight_normalized,duration_normalized,heart_rate_normalized,body_temp_normalized]
 
     x1=np.array([x])
-    formatted_array=np.round(x1,2)
-    prediction=model.predict(formatted_array)
+    prediction=model.predict(x1)
     st.write(f'predicted calories are: {prediction*314}')
 
 else:
