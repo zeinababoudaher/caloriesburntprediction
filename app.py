@@ -9,16 +9,16 @@ st.divider()
 st.write("with this app you can get the calories burnt during exercise")
 
 gender=st.selectbox("enter your gender",{"Male","Female"})
-age=st.number_input(value=1,step=1,min_value=0,label="enter your age")
-height=st.number_input(value=1,step=1,min_value=0,label="enter your height")
-weight=st.number_input(value=1,step=1,min_value=0,label="enter your weight")
-duration=st.number_input(value=1,step=1,min_value=0,label="enter the duration")
-heart_rate=st.number_input(value=1,step=1,min_value=0,label="enter heart rate")
-body_temp=st.number_input(value=1,step=1,min_value=0,label="enter body temperature")
+age=st.number_input(value=None,step=0.1,label="enter your age")
+height=st.number_input(value=None,step=0.1,label="enter your height")
+weight=st.number_input(value=None,step=0.1,label="enter your weight")
+duration=st.number_input(value=None,step=0.1,label="enter the duration")
+heart_rate=st.number_input(value=None,step=0.1,label="enter heart rate")
+body_temp=st.number_input(value=None,step=0.1,label="enter body temperature")
 
 
 
-model=joblib.load("randmodell.pkl")
+model=joblib.load("linearmodel.pkl")
 
 st.divider()
 
